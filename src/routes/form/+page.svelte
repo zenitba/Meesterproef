@@ -1,5 +1,5 @@
 <script>
-  import Form from './form/form.svelte';
+  import Form from './form.svelte';
 
   /** @type {import('./$types').ActionData} */
   export let form;
