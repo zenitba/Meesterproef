@@ -85,15 +85,13 @@
 </header>
 <noscript>
   <style>
-    .header{
-      background:#303030 !important;
-      padding-block:10px!important;
+    .header {
+      background: #303030 !important;
+      padding-block: 10px !important;
       box-shadow: 0px -3px 15px -2px #bc0909;
-
-
     }
-    .header:active{
-      background:#303030 !important;;
+    .header.active {
+      background: #303030 !important;
     }
     .theme-btn {
       display: none !important;
@@ -261,12 +259,6 @@
   transition-delay: 0.5s;
 }
 
-/* .navbar-link::before {
-  border-bottom: 2px solid red;
-} */
-
-/* HEADER RESPONSIVE */
-/* Responsive for larger dan 992px screen */
 @media (min-width: 992px) {
   /* HEADER */
   .header { padding-block: 30px; }
