@@ -1,0 +1,101 @@
+
+
+<section class="hero" id="home">
+  <figure class="hero-banner">
+    <img src="/7.svg" alt="" class="">
+  </figure>
+  <div class="hero-content">
+    <h2 class="h2 hero-title">Jouw betrouwbare partner voor elektrische oplossingen!</h2>
+    <div class="border-line"></div>
+    <a href="#contact" class="btn btn-primary">Neem contact op</a>
+  </div>
+  <a href="#about" class="scroll-down">Scroll</a>
+</section>
+
+
+
+
+
+
+
+
+<style>
+  /* HERO */
+  .hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 115px;
+  margin-bottom: var(--section-padding);
+}
+
+.hero-banner {
+  max-width: 500px;
+  width: 125%;
+  margin-bottom: 30px;
+}
+:is(.hero-social-list, .scroll-down) { display: none; }
+
+.hero-content { max-width: 450px; }
+
+.hero-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero .btn-primary { margin-inline: auto; }
+
+/* HERO RESPONSIVE */
+/* Responsive for larger than 992px screen */
+@media (min-width: 992px) {
+  /* HERO */
+  .hero {
+      position: relative;
+      padding-top: 0;
+      height: 100vh;
+    }
+    .hero-banner {
+      max-width: unset;
+      height: 100%;
+      margin-bottom: 0;
+    }
+    .hero img {
+      height: 100%;
+      width: auto;
+      margin-inline: auto;
+    }
+    .hero-content {
+      --color-primary: var(--white);
+      position: absolute;
+      top: 70%;
+      filter: drop-shadow(2px 4px 10px var(--black));
+    }
+    .hero .btn-primary:is(:hover, :focus) { color: hsl(0, 0%, 12%); }
+    .scroll-down {
+      display: block;
+      position: absolute;
+      bottom: 80px;
+      right: -30px;
+      color: var(--color-secondary);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      transform-origin: top right;
+    }
+    .scroll-down::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: -50px;
+      width: 35px;
+      height: 2px;
+      background: red;
+    }
+  }
+  @media (min-width: 1200px) {
+      .scroll-down { right: -80px; }
+
+  }
+</style>
