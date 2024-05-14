@@ -2,7 +2,7 @@
 
 <section class="hero" id="home">
   <figure class="hero-banner">
-    <img src="/7.svg" alt="" class="">
+    <img src="/7.svg" alt="" class="hero-image">
   </figure>
   <div class="hero-content">
     <h2 class="h2 hero-title">Jouw betrouwbare partner voor elektrische oplossingen!</h2>
@@ -11,13 +11,6 @@
   </div>
   <a href="#about" class="scroll-down">Scroll</a>
 </section>
-
-
-
-
-
-
-
 
 <style>
   /* HERO */
@@ -46,6 +39,14 @@
 }
 
 .hero .btn-primary { margin-inline: auto; }
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+
+  }
 
 /* HERO RESPONSIVE */
 /* Responsive for larger than 992px screen */
@@ -61,10 +62,11 @@
       height: 100%;
       margin-bottom: 0;
     }
-    .hero img {
+    .hero-image {
       height: 100%;
       width: auto;
       margin-inline: auto;
+      padding: 20px;
     }
     .hero-content {
       --color-primary: var(--white);
@@ -98,4 +100,19 @@
       .scroll-down { right: -80px; }
 
   }
+ /* Controleer op ondersteuning van prefers-contrast */
+@supports (prefers-contrast: more) {
+  @media (prefers-contrast: more) {
+    .hero-image {
+      filter: contrast(2);
+    }
+  }
+}
+
+/* Fallback voor browsers die prefers-contrast niet ondersteunen */
+@supports not (prefers-contrast: more) {
+  .hero-image {
+    filter: contrast(1);
+  }
+}
 </style>

@@ -3,10 +3,9 @@
       <p class="section-subtitle">Diensten</p>
       <div class="project-inner">
         <div class="text-section">
-          <h2 class="h3 section-title">Met welke service kan Araya Elektrotechniek je helpen?</h2>
+          <h2 class="h3 section-title">Hoe kan Araya Elektrotechniek jou van dienst zijn?</h2>
           <p class="section-text">
-              Ik bied deskundige oplossingen voor al uw elektra vraagstukken, van storingsoplossing tot de installatie van stopcontacten en groepenkasten.
-          </p>
+            Ik bied deskundige oplossingen voor al jouw elektrische vraagstukken, van het oplossen van storingen tot het installeren van stopcontacten en groepenkasten.          </p>
         </div>
         <div class="services-container">
           <div class="service-item">

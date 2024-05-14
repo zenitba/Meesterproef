@@ -15,13 +15,13 @@
         <p class="section-subtitle">Over Araya Elektrotechniek</p>
         <h2 class="h3 section-title">Elektricien nodig?</h2>
         <p class="section-text">
-            Bij Araya Elektrotechniek gevestigd in het hart van Volendam, Noord-Holland, staat vakmanschap centraal. Als toegewijde elektricien met jarenlange ervaring levert Araya betrouwbare en hoogwaardige elektrotechnische oplossingen. Of het nu gaat om complexe projecten of eenvoudige reparaties, Araya Elektrotechniek biedt een veelzijdige dienstverlening voor zowel particulieren als bedrijven. Als u op zoek bent naar een betrouwbare elektrotechnische specialist, is Araya Elektrotechniek een waardevolle partner. Met een toewijding aan vakmanschap en klanttevredenheid, kunt u rekenen op een betrouwbare en professionele service.
-        </p>
+          Araya Elektrotechniek, gevestigd in het hart van Volendam, Noord-Holland, is een toonaangevende leverancier van betrouwbare en hoogwaardige elektrotechnische oplossingen. Met mijn jarenlange ervaring als toegewijde elektricien sta ik klaar voor zowel complexe projecten als eenvoudige reparaties. Mijn veelzijdige dienstverlening bedient zowel particuliere als zakelijke klanten. Als u zoekt naar een betrouwbare elektrotechnische specialist, ben ik uw waardevolle partner. Ik ben toegewijd aan vakmanschap en klanttevredenheid, en bied een professionele service waarop u kunt vertrouwen.</p>
+            
     </div>
 </section>
 <style>
    /* ABOUT */
-  .about { padding-block: var(--section-padding); }
+  /* .about { padding-block: var(--section-padding); } */
   .about-banner {
     max-width: 400px;
     margin-inline: auto;

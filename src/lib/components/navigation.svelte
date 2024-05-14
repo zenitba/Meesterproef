@@ -1,78 +1,109 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
-  let themeActive = false; // Assuming there is a CSS class that toggles themes
+  import { header } from 'request/lib/hawk'
+  import { onMount } from 'svelte';
+  let themeActive = false;
   let headerActive = false;
-  // Toggle functions
-  // Read the theme from localStorage on component mount
-  onMount(() => {
-    themeActive = localStorage.getItem('theme') === 'light_theme';
-    // Ensure body class is set correctly based on stored theme
-    document.body.classList.toggle('light_theme', themeActive);
-    document.body.classList.toggle('dark_theme', !themeActive);
-  });
 
   function toggleTheme() {
-    themeActive = !themeActive;
-    localStorage.setItem('theme', themeActive ? 'light_theme' : 'dark_theme');
-    document.body.classList.toggle('light_theme', themeActive);
-    document.body.classList.toggle('dark_theme', !themeActive);
+      themeActive = !themeActive;
+      localStorage.setItem('theme', themeActive ? 'light_theme' : 'dark_theme');
+      document.body.classList.toggle('light_theme', themeActive);
+      document.body.classList.toggle('dark_theme', !themeActive);
   }
 
-
   function handleScroll() {
-    const scrollY = window.scrollY;
-    headerActive = scrollY >= 10;
-    goTopBtnActive = scrollY >= 10;
+      const scrollY = window.scrollY;
+      headerActive = scrollY >= 10;
   }
 
   onMount(() => {
-    window.addEventListener('scroll', handleScroll);
-    themeActive = localStorage.getItem('theme') === 'light_theme';
-    document.body.classList.toggle('light_theme', themeActive);
-    document.body.classList.toggle('dark_theme', !themeActive);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+      const storedTheme = localStorage.getItem('theme') || 'dark_theme';
+      themeActive = storedTheme === 'light_theme';
+      document.body.classList.add(storedTheme);
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
   });
+
   let isNavOpen = false;
 
   function toggleNav() {
-    isNavOpen = !isNavOpen;
+      isNavOpen = !isNavOpen;
   }
 
+  function closeNav() {
+      isNavOpen = false;
+  }
 </script>
 
 <header class:active={headerActive} class="header" data-header>
   <div class="container">
-    <h1 class="logo">
-      <!-- Dynamic src based on themeActive -->
-      <img src={themeActive ? 'logo-z.svg' :'logo_wit.svg'} alt="Araya Electrotechniek Logo">
-    </h1>
-    <div class="navbar-actions">
-      <button class="theme-btn" class:light={themeActive} on:click={toggleTheme}>
-        <ion-icon name={themeActive ? 'sunny' : 'moon' }></ion-icon>
-      </button>      
-    </div>
-    <button class="nav-toggle-btn {isNavOpen ? 'active' : ''}" title="Menu" on:click={toggleNav}>
-      <span class="one"></span>
-      <span class="two"></span>
-      <span class="three"></span>
-    </button>
-    <nav class="navbar {isNavOpen ? 'active' : ''}" data-navbar>
-      <ul class="navbar-list">
-        <li><a href="#home" class="navbar-link">Home.</a></li>
-        <li><a href="#about" class="navbar-link">Organisatie.</a></li>
-        <li><a href="#portfolio" class="navbar-link">Diensten.</a></li>
-        <li><a href="#contact" class="navbar-link">Contact.</a></li>
-      </ul>
-    </nav>
+      <h1 class="logo">
+          <img src={themeActive ? 'logo-z.svg' : 'logo-wit.svg'} alt="Araya Electrotechniek Logo">
+      </h1>
+      <div class="navbar-actions">
+          <button class="theme-btn" class:light={themeActive} on:click={toggleTheme}>
+              {#if themeActive}
+                  <!-- Sunny Icon SVG -->
+                  <svg class="icon" viewBox="0 0 24 24">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M12 19a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
+                      <path d="M18.313 16.91l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.218 -1.567l.102 .07z" stroke-width="0" fill="currentColor" />
+                      <path d="M7.007 16.993a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" stroke-width="0" fill="currentColor" />
+                      <path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" stroke-width="0" fill="currentColor" />
+                      <path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" stroke-width="0" fill="currentColor" />
+                      <path d="M6.213 4.81l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 1.217 -1.567l.102 .07z" stroke-width="0" fill="currentColor" />
+                      <path d="M19.107 4.893a1 1 0 0 1 .083 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7a1 1 0 0 1 1.414 0z" stroke-width="0" fill="currentColor" />
+                      <path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" stroke-width="0" fill="currentColor" />
+                      <path d="M12 7a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" stroke-width="0" fill="currentColor" />
+                  </svg>
+              {:else}
+                  <!-- Moon Icon SVG -->
+                  <svg class="icon" viewBox="0 0 24 24">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+                  </svg>
+              {/if}
+          </button>
+      </div>
+      <button class="nav-toggle-btn {isNavOpen ? 'active' : ''}" title="Menu" on:click={toggleNav}>
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+      </button>
+      <nav class="navbar {isNavOpen ? 'active' : ''}" data-navbar>
+          <ul class="navbar-list">
+              <li><a href="#home" class="navbar-link" on:click={closeNav}>Home.</a></li>
+              <li><a href="#about" class="navbar-link" on:click={closeNav}>Organisatie.</a></li>
+              <li><a href="#portfolio" class="navbar-link" on:click={closeNav}>Diensten.</a></li>
+              <li><a href="#contact" class="navbar-link" on:click={closeNav}>Contact.</a></li>
+          </ul>
+      </nav>
   </div>
 </header>
+<noscript>
+  <style>
+    .header{
+      background:#303030 !important;
+      padding-block:10px!important;
+      box-shadow: 0px -3px 15px -2px #bc0909;
 
 
+    }
+    .header:active{
+      background:#303030 !important;;
+    }
+    .theme-btn {
+      display: none !important;
+    }
+  </style>
+</noscript>
 
 <style>
-  /* HEADER */
+/* HEADER */
 .header {
   padding-block: 15px;
   position: fixed;
@@ -98,13 +129,12 @@
 
 .logo {
   position: relative;
-   min-width: 130px;
+  min-width: 130px;
   z-index: 2; 
 }
 
 .logo img {
-width: auto;
-
+  width: auto;
 }
 
 .logo span {
@@ -127,7 +157,7 @@ width: auto;
 
 .navbar-actions option {
   background: var(--bg-primary);
-  color: var(--color-primary);
+  color: var (--color-primary);
 }
 
 .theme-btn {
@@ -140,41 +170,16 @@ width: auto;
   overflow: hidden; 
 }
 
-.theme-btn ion-icon {
-  transition: transform 0.3s ease; 
-  transform: translateX(0%); 
-  visibility: visible;
+.theme-btn .icon {
+  width: 24px;
+  height: 24px;
 }
 
-.theme-btn.light ion-icon {
-  transform: translateX(100%);
+.theme-btn.light .icon {
   color: rgb(255, 221, 0);
 }
 
 .header.active .theme-btn { background: lightgrey; }
-ion-icon {
-  font-size: 20px;  
-  color: #333;      
-}
-/* .theme-btn .icon {
-  position: relative;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
-  box-shadow: inset 9px -6px var(--color-primary);
-  transition: var(--transition-1);
-}
-
-.theme-btn.active ion-icon {
-  left: 70px;
-  box-shadow: inset 20px -20px hsl(51, 95%, 54%);
-}
-.theme-btn ion-icon {
-    font-size: 24px;
-    color: yellow; 
-} */
-
 
 .nav-toggle-btn {
   position: relative;
@@ -254,10 +259,9 @@ ion-icon {
   border-bottom: 2px solid red;
 }
 
-/* HEADER RESPONSIVE*/
-/* Responsive for larger than 992px screen */
+/* HEADER RESPONSIVE */
+/* Responsive for larger dan 992px screen */
 @media (min-width: 992px) {
-
   /* HEADER */
   .header { padding-block: 30px; }
   .header.active { padding-block: 15px; }
@@ -285,5 +289,4 @@ ion-icon {
   }
   .navbar-link::before { height: 2px; }
 }
-
 </style>
