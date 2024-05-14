@@ -115,4 +115,9 @@
     filter: contrast(1);
   }
 }
+@media (max-width: 400px){
+.hero-image{
+  max-width: 86%;
+}
+}
 </style>

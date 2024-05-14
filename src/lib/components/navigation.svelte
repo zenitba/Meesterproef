@@ -168,15 +168,22 @@
   position: relative; 
   display: flex;
   overflow: hidden; 
+  transition: var(--transition-1);
 }
 
 .theme-btn .icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  left: 0;
+  transition: var(--transition-1); 
+  transform: translateX(0%); 
 }
 
 .theme-btn.light .icon {
+  transform: translateX(100%);
+  transition: var(--transition-1);
   color: rgb(255, 221, 0);
+  left: 20px;
 }
 
 .header.active .theme-btn { background: lightgrey; }
@@ -255,9 +262,9 @@
   transition-delay: 0.5s;
 }
 
-.navbar-link::before {
+/* .navbar-link::before {
   border-bottom: 2px solid red;
-}
+} */
 
 /* HEADER RESPONSIVE */
 /* Responsive for larger dan 992px screen */
