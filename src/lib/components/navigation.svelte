@@ -1,5 +1,4 @@
 <script>
-  import { header } from 'request/lib/hawk'
   import { onMount } from 'svelte';
   let themeActive = false;
   let headerActive = false;
