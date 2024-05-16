@@ -20,7 +20,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 115px;
+  /* padding-top: 115px; */
   margin-bottom: var(--section-padding);
 }
 
