@@ -111,8 +111,7 @@
   gap: 10px;
 }
 
-.logo {
-  position: relative;
+.logo {  position: relative;
   min-width: 130px;
   z-index: 2; 
 }
