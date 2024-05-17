@@ -9,7 +9,7 @@
 
 <section class="about" id="about">
     <figure class="about-banner">
-        <img src="/9.svg" alt="About Banner" class="image">
+        <img src="/9.svg" alt="About Banner" class="image" loading="lazy" width="400" height="400">
     </figure>
     <div class="about-content section-content">
         <p class="section-subtitle">Over Araya Elektrotechniek</p>

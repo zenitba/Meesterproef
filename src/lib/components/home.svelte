@@ -2,7 +2,7 @@
 
 <section class="hero" id="home">
   <figure class="hero-banner">
-    <img src="/7.svg" alt="" class="hero-image">
+    <img src="/7.svg" alt="" class="hero-image" loading="lazy" width="300" height="300">
   </figure>
   <div class="hero-content">
     <h2 class="h2 hero-title">Jouw betrouwbare partner voor elektrische oplossingen!</h2>

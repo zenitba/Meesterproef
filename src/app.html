@@ -4,9 +4,6 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-<!-- For using Ionicons -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <link href="https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed" rel="stylesheet">
     <link
@@ -14,6 +11,17 @@
     rel="stylesheet">
 		%sveltekit.head%
 		<title>Araya Elektrotechniek</title>
+    <script>
+      // Check localStorage for the preferred theme on page load
+      (function() {
+          const storedTheme = localStorage.getItem('theme') || 'dark_theme';
+          document.body.classList.add(storedTheme);
+          // Show theme button if JavaScript is enabled
+          document.addEventListener('DOMContentLoaded', () => {
+              document.querySelector('.theme-btn').style.display = 'flex';
+          });
+      })();
+  </script>
 	</head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>

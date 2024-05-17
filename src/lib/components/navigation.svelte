@@ -41,7 +41,7 @@
 <header class:active={headerActive} class="header" data-header>
   <div class="container">
       <h1 class="logo">
-          <img src={themeActive ? 'logo-z.svg' : 'logo-wit.svg'} alt="Araya Electrotechniek Logo">
+          <img src={themeActive ? 'logo-z.svg' : 'logo-wit.svg'} alt="Araya Electrotechniek Logo" loading="lazy" width="50" height="50">
       </h1>
       <div class="navbar-actions">
           <button class="theme-btn" class:light={themeActive} on:click={toggleTheme}>
@@ -83,21 +83,8 @@
       </nav>
   </div>
 </header>
-<noscript>
-  <style>
-    .header {
-      background: #303030 !important;
-      padding-block: 10px !important;
-      box-shadow: 0px -3px 15px -2px #bc0909;
-    }
-    .header.active {
-      background: #303030 !important;
-    }
-    .theme-btn {
-      display: none !important;
-    }
-  </style>
-</noscript>
+
+
 
 <style>
 /* HEADER */

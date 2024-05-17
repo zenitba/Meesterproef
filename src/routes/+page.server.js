@@ -14,7 +14,7 @@ export const actions = {
             return fail(400, { error: 'Vul alle vereiste velden in.', values: { name, email, phone, message } });
         }
 
-        // Verwerk de formulierdata (bijv. opslaan in een database)
+        // Verwerk de formulierdata 
         try {
             console.log('Formulier ingediend:', { name, email, phone, message });
 
