@@ -1,6 +1,6 @@
 # Araya Electrotechniek💡
 
-<img width="834" alt="Schermafbeelding 2024-05-19 om 00 40 50" src="https://github.com/zenitba/Meesterproef/assets/112856019/18030bb4-489d-42b4-b61d-282b2d3c589a">
+<img width="704" alt="Schermafbeelding 2024-05-19 om 00 40 50" src="https://github.com/zenitba/Meesterproef/assets/112856019/18030bb4-489d-42b4-b61d-282b2d3c589a">
 
 [Bezoek de website💡]()
 
