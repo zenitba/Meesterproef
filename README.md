@@ -18,8 +18,6 @@ Araya Elektrotechniek, gevestigd in het hart van Volendam, Noord-Holland, is een
 ### Technologieën
 - **SvelteKit**: Een framework voor het bouwen van webapplicaties met focus op snelheid en efficiëntie.
 - **Hygraph**: Een tool voor het beheren en ophalen van gegevens.
-- **CSS**: Cascading Style Sheets voor het ontwerpen en stylen van de gebruikersinterface.
-- **JavaScript (JS)**: Programmeertaal voor de interactieve functionaliteit van de webapplicatie.
 
 ## Installatie
 Volg de onderstaande stappen om de website lokaal te installeren en te runnen:
