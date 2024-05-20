@@ -1,18 +1,25 @@
+<script>
+  export let data
+</script>
+
 <section class="hero" id="home">
   <!-- Banner afbeelding -->
+  {#each data.homes as home}
   <figure class="hero-banner">
-    <img src="/7.svg" alt="Hero Image" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
+    <img src="{home.homeImage.url}" alt="Hero Image" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
   </figure>
 
   <!-- Inhoud van de hero sectie -->
   <div class="hero-content">
-    <h2 class="h2 hero-title">Jouw betrouwbare partner voor elektrische oplossingen!</h2>
+    <h2 class="h2 hero-title">{home.homeTitle}</h2>
     <div class="border-line"></div>
     <a href="#contact" class="btn btn-primary">Neem contact op</a>
   </div>
 
   <!-- Scroll down link -->
   <a href="#about" class="scroll-down">Scroll</a>
+  {/each}
+
 </section>
 
 <style>
@@ -30,7 +37,10 @@
     max-width: 500px;
     width: 125%;
   }
-  :is(.hero-social-list, .scroll-down) { display: none; }
+
+  :is(.hero-social-list, .scroll-down) {
+    display: none;
+  }
 
   .hero-content {
     max-width: 450px;
@@ -114,26 +124,4 @@
       right: -80px;
     }
   }
-
-  /* Controleer op ondersteuning van prefers-contrast */
-  @supports (prefers-contrast: more) {
-    @media (prefers-contrast: more) {
-      .hero-image {
-        filter: contrast(2);
-      }
-    }
-  }
-
-  /* Fallback voor browsers die prefers-contrast niet ondersteunen */
-  @supports not (prefers-contrast: more) {
-    .hero-image {
-      filter: contrast(1);
-    }
-  }
-
-  @media (max-width: 400px) {
-    .hero-image {
-      max-width: 86%;
-    }
-  }
-</style>
+  </style>

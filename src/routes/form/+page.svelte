@@ -1,8 +1,8 @@
 <script>
-  import Form from './form.svelte';
+  import Form from '$lib/components/form.svelte';
 
   /** @type {import('./$types').ActionData} */
-  export let form;
+  export let data;
 </script>
 
-<Form {form} />
+<Form {data} />

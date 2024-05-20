@@ -11,17 +11,21 @@
   <title>Araya Elektrotechniek</title>
   <noscript>
     <style>
-      main {
-        --bg-primary: hsl(0, 0%, 9%);
-        --bg-secondary: hsl(0, 0%, 19%);
-        --color-primary: hsl(0, 0%, 100%);
-        --color-secondary: hsl(0, 0%, 62%);
-        --card-shadow: hsla(0, 0%, 0%, 0.4);
-        --input-bg: hsl(0, 0%, 16%);
-        --shadow-1: 10px 10px 40px var(--card-shadow);
-        background: var(--bg-primary);
-        color: var(--color-primary);
-        transition: var(--transition-1);
+      main{
+    /* Lichte modus stijlen */
+    --bg-primary: hsl(0, 0%, 9%);
+    --bg-secondary: hsl(0, 0%, 19%);
+    --color-primary: #ffffff;
+    --color-secondary: hsl(0, 0%, 62%);
+    --card-shadow: hsla(0, 0%, 0%, 0.4);
+    --input-bg: hsl(0, 0%, 16%);
+    --shadow-1: 10px 10px 40px var(--card-shadow);
+    background: var(--bg-primary);
+    color: var(--color-primary);
+    transition: var(--transition-1);
+  }
+      #preloader{
+        display: none !important;
       }
     </style>
   </noscript>
@@ -215,10 +219,6 @@
     width: 100%;
   }
 
-  ion-icon {
-    pointer-events: none;
-  }
-
   ::selection {
     background: var(--color-primary);
     color: var(--bg-primary);
@@ -237,12 +237,20 @@
     padding-inline: 10px;
   }
 
-  .h2,
-  .h3 {
-    color: var(--color-primary);
-    font-family: var(--ff-poppins);
-    line-height: 1.2;
-  }
+  .h1 {
+
+color: var(--color-primary);
+font-family: var(--ff-poppins);
+line-height: 1.2;
+font-size: var(--fs-1);
+}
+.h2,
+.h3{
+color: var(--color-primary);
+font-family: var(--ff-poppins);
+line-height: 1.2;
+
+}
 
   .h3 {
     font-size: var(--fs-3);

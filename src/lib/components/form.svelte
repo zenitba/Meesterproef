@@ -1,14 +1,11 @@
 <script>
   import { enhance } from '$app/forms';
-
-  // Variabelen voor formulier status en berichten
+  export let data;
   let isSubmitting = false;
   let successMessage = '';
   let errorMessage = '';
 
-  // Functie voor het verbeteren van het formulier
   function handleEnhance({ formElement }) {
-    // Functie voor het afhandelen van het formulier verzenden
     const handleSubmit = async ({ result }) => {
       isSubmitting = false;
       successMessage = '';
@@ -26,77 +23,36 @@
 </script>
 
 <section class="contact" id="contact">
-  <!-- Contact inhoud -->
   <div class="contact-content section-content">
     <p class="section-subtitle">Contact</p>
-    <h2 class="h2 section-title">Begin Vandaag met Uw Elektrische Succes!</h2>
-    <p class="section-text">
-      Heeft u een elektraproject in gedachten? Aarzel niet en stuur me vandaag nog een bericht! Ik ben hier om u te helpen met deskundig advies en snelle service. Vul het contactformulier in, en ik neem zo snel mogelijk contact met u op om uw project te bespreken.
-    </p>
-    <ul class="contact-list">
-      <li class="contact-list-item">
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">BTW:</h3>
-          <p class="contact-info">NL471224194</p>
-        </div>
-      </li>
-      <li class="contact-list-item">
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">KvK:</h3>
-          <p class="contact-info">86037420</p>
-        </div>
-      </li>
-      <li class="contact-list-item">
-        <div class="wrapper">
-          <h3 class="h4 contact-item-title">Email:</h3>
-          <a href="mailto:Araya-Elektrotechniek@gmail.com" class="contact-info">Araya-Elektrotechniek@gmail.com</a>
-        </div>
-      </li>
-    </ul>
+    {#each data.forms as form}
+      <h2 class="h3 section-title">{form.formTitle}</h2>
+      <p class="section-text">{form.formDescription}</p>
+    {/each}
   </div>
-
-  <!-- Contactformulier -->
   <form method="POST" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
     <div class="form-wrapper">
       <label for="name" class="form-label">Naam</label>
       <div class="input-wrapper">
         <input type="text" name="name" id="name" required placeholder="e.g John Doe" class="input-field">
-        <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-          <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
-        </svg>
       </div>
     </div>
     <div class="form-wrapper">
       <label for="email" class="form-label">Email</label>
       <div class="input-wrapper">
         <input type="email" name="email" id="email" required placeholder="e.g johndoe@mail.com" class="input-field">
-        <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
-          <path d="M3 7l9 6l9 -6" />
-        </svg>
       </div>
     </div>
     <div class="form-wrapper">
       <label for="phone" class="form-label">Mobiel</label>
       <div class="input-wrapper">
         <input type="tel" name="phone" id="phone" required placeholder="Mobiele nummer" class="input-field">
-        <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
-        </svg>
       </div>
     </div>
     <div class="form-wrapper">
       <label for="message" class="form-label">Bericht</label>
       <div class="input-wrapper">
         <textarea name="message" id="message" required placeholder="Beschrijf uw elektrische vraag of project hier..." class="input-field"></textarea>
-        <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1" />
-        </svg>
       </div>
     </div>
     {#if successMessage}
@@ -114,7 +70,6 @@
     </button>
   </form>
 </section>
-
 <style>
   /* CONTACT */
   .contact {

@@ -1,13 +1,18 @@
+<script>
+  export let data
+</script>
 <section class="project" id="portfolio">
+  {#each data.services as service}
+
   <!-- Inhoud van de sectie -->
   <div class="project-content section-content">
     <p class="section-subtitle">Diensten</p>
     <div class="project-inner">
       <!-- Tekst sectie -->
       <div class="text-section">
-        <h2 class="h2 section-title">Hoe kan Araya Elektrotechniek jou van dienst zijn?</h2>
+        <h2 class="h1 section-title">{service.serviceTitle}</h2>
         <p class="section-text">
-          Ik bied deskundige oplossingen voor al jouw elektrische vraagstukken, van het oplossen van storingen tot het installeren van stopcontacten en groepenkasten.
+          {service.serviceDescription}
         </p>
       </div>
       <!-- Container voor de diensten -->
@@ -100,6 +105,7 @@
       </div>
     </div>
   </div>
+  {/each}
 </section>
 
 <style>

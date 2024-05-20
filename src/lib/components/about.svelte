@@ -1,17 +1,24 @@
+<script>
+  export let data
+</script>
+
 <section class="about" id="about">
   <!-- Afbeelding banner -->
+  {#each data.abouts as about}
+
   <figure class="about-banner">
-    <img src="/9.svg" alt="About Banner" class="image" fetchpriority="high" loading="lazy" width="400" height="400">
+    <img src="{about.aboutImage.url}" alt="About Banner" class="image" fetchpriority="high" loading="lazy" width="400" height="400">
   </figure>
 
   <!-- Inhoud van de About sectie -->
   <div class="about-content section-content">
     <p class="section-subtitle">Over Araya Elektrotechniek</p>
-    <h2 class="h2 section-title">Elektricien nodig?</h2>
+    <h2 class="h1 section-title">{about.aboutTitle}</h2>
     <p class="section-text">
-      Araya Elektrotechniek, gevestigd in het hart van Volendam, Noord-Holland, is een toonaangevende leverancier van betrouwbare en hoogwaardige elektrotechnische oplossingen. Met mijn jarenlange ervaring als toegewijde elektricien sta ik klaar voor zowel complexe projecten als eenvoudige reparaties. Mijn veelzijdige dienstverlening bedient zowel particuliere als zakelijke klanten. Als u zoekt naar een betrouwbare elektrotechnische specialist, ben ik uw waardevolle partner. Ik ben toegewijd aan vakmanschap en klanttevredenheid, en bied een professionele service waarop u kunt vertrouwen.
+      {about.aboutDescription}
     </p>
   </div>
+  {/each}
 </section>
 
 <style>
