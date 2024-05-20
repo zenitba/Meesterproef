@@ -22,7 +22,6 @@
 		"graphql": "^16.8.1",
 		"graphql-request": "^7.0.1",
 		"gsap": "^3.12.5",
-		"node-fetch": "^3.3.2",
-		"nodemailer": "^6.9.13"
+		"node-fetch": "^3.3.2"
 	}
 }
