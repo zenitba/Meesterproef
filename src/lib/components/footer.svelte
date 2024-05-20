@@ -80,7 +80,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .footer .logo {
+    .footer .logo-name {
       margin-bottom: 0;
     }
   }
