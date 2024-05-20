@@ -1,7 +1,7 @@
 <section class="about" id="about">
   <!-- Afbeelding banner -->
   <figure class="about-banner">
-    <img src="/9.svg" alt="About Banner" class="image" loading="lazy" width="400" height="400">
+    <img src="/9.svg" alt="About Banner" class="image" fetchpriority="high" loading="lazy" width="400" height="400">
   </figure>
 
   <!-- Inhoud van de About sectie -->

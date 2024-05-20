@@ -1,7 +1,7 @@
 <section class="hero" id="home">
   <!-- Banner afbeelding -->
   <figure class="hero-banner">
-    <img src="/7.svg" alt="Hero Image" class="hero-image" loading="lazy" width="400" height="400">
+    <img src="/7.svg" alt="Hero Image" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
   </figure>
 
   <!-- Inhoud van de hero sectie -->
