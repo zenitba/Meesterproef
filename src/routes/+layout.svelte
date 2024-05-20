@@ -12,7 +12,6 @@
     <article class="container">
         <Home />
         <About />
-        <slot />
         <Service />
         <Form />
     </article>

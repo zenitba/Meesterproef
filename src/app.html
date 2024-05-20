@@ -1,49 +1,121 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link href="https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed" rel="stylesheet">
-    <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap"
-    rel="stylesheet">
-		%sveltekit.head%
-		<title>Araya Elektrotechniek</title>
-    <script>
-      // Check localStorage for the preferred theme on page load
-      (function() {
-          const storedTheme = localStorage.getItem('theme') || 'dark_theme';
-          document.body.classList.add(storedTheme);
-          // Show theme button if JavaScript is enabled
-          document.addEventListener('DOMContentLoaded', () => {
-              document.querySelector('.theme-btn').style.display = 'flex';
-          });
-      })();
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%sveltekit.assets%/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap" rel="stylesheet">
+  %sveltekit.head%
+  <title>Araya Elektrotechniek</title>
+  <noscript>
+    <style>
+      main {
+        --bg-primary: hsl(0, 0%, 9%);
+        --bg-secondary: hsl(0, 0%, 19%);
+        --color-primary: hsl(0, 0%, 100%);
+        --color-secondary: hsl(0, 0%, 62%);
+        --card-shadow: hsla(0, 0%, 0%, 0.4);
+        --input-bg: hsl(0, 0%, 16%);
+        --shadow-1: 10px 10px 40px var(--card-shadow);
+        background: var(--bg-primary);
+        color: var(--color-primary);
+        transition: var(--transition-1);
+      }
+    </style>
+  </noscript>
+  <style>
+    /* Preloader styles */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #e6e6e6;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .preloader-logo {
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+
+    .progress-bar {
+      width: 80%;
+      max-width: 600px;
+      height: 25px;
+      border: 2px solid #E40F37;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress {
+      width: 0;
+      height: 100%;
+      background: #E40F37;
+      border-radius: 20px 0 0 20px;
+      animation: loading 3s ease-in-out forwards;
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    body.loaded #preloader {
+      display: none;
+    }
+  </style>
+</head>
+
+<body data-sveltekit-preload-data="hover" class="dark_theme">
+  <div id="preloader">
+    <img src="logo-z.svg" alt="Araya Elektrotechniek Logo" class="preloader-logo">
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+  </div>
+  <div style="display: contents">%sveltekit.body%</div>
+
+  <script>
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+    });
   </script>
-	</head>
-  <body data-sveltekit-preload-data="hover">
-    <div style="display: contents">%sveltekit.body%</div>
-  </body>
+</body>
+
 </html>
+
 <style>
-  
-/* CUSTOM PROPERTIES */
-@import url(https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed);
-:root {
-  /* COLORS */
+  @import url(https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed);
+
+  :root {
+    /* Kleuren */
     --raw-seinna: hsl(0, 100%, 50%);
     --sizzling-sunrise: hsl(51, 95%, 54%);
     --scarlet: hsl(0, 100%, 50%);
     --orange: hsla(33, 100%, 50%, 0.736);
-    --input-bg:#ededed;
+    --input-bg: #ededed;
     --black: hsl(0, 0%, 0%);
     --white: hsl(0, 0%, 100%);
-   /* FONTS */
+    
+    /* Lettertypen */
     --ff-saira-stencil-one: 'Spartacus W00 Bold Condensed', sans-serif;
     --ff-poppins: 'Poppins', sans-serif;
     --ff-roboto: 'Roboto', sans-serif;
+    
+    /* Lettergroottes */
     --fs-1: 2rem;
     --fs-2: calc(1.813rem + 1vw);
     --fs-3: calc(1.313rem + 1vw);
@@ -51,60 +123,66 @@
     --fs-5: 1rem;
     --fs-6: 0.813rem;
     --fs-7: 0.75rem;
+    
+    /* Lettergewichten */
     --fw-400: 400;
     --fw-700: 700;
-   /* TRANSITION */
-    /* --transition-1: 0.25s ease-in-out; */
+    
+    /* Overgangen */
     --transition-1: all 0.3s ease;
-
-  /* SPACING */
+    
+    /* Afstanden */
     --section-padding: 80px;
-  /* RADIUS */
+    
+    /* Radius */
     --radius-4: 4px;
     --radius-12: 12px;
   }
-  
 
-  
- /* DARKMODE */
-  body.dark_theme {
-  
+  body {
+    /* Donkere modus standaard */
     --bg-primary: hsl(0, 0%, 9%);
     --bg-secondary: hsl(0, 0%, 19%);
-    --color-primary: hsl(0, 0%, 100%);
+    --color-primary: #ffffff;
     --color-secondary: hsl(0, 0%, 62%);
     --card-shadow: hsla(0, 0%, 0%, 0.4);
     --input-bg: hsl(0, 0%, 16%);
-  
     --shadow-1: 10px 10px 40px var(--card-shadow);
-  
+    background: var(--bg-primary);
+    color: var(--color-primary);
+    transition: var(--transition-1);
   }
-  /* LIGHTMODE */
+
   body.light_theme {
-  
+    /* Lichte modus stijlen */
     --bg-primary: hsl(0, 0%, 90%);
     --bg-secondary: hsl(0, 0%, 100%);
     --color-primary: hsl(0, 0%, 12%);
     --color-secondary: hsl(0, 0%, 37%);
     --card-shadow: hsla(0, 0%, 0%, 0.1);
     --input-bg: hsl(0, 0%, 93%);
-  
     --shadow-1: 10px 10px 40px var(--card-shadow);
-  
-}
-  
-/* RESET */
-  
-  *, *::before, *::after {
+    background: var(--bg-primary);
+    color: var(--color-primary);
+  }
+
+  /* Reset */
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
-  li { list-style: none; }
-  
-  a { text-decoration: none; }
-  
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   a,
   img,
   time,
@@ -114,8 +192,10 @@
   select,
   button,
   textarea,
-  ion-icon { display: block; }
-  
+  ion-icon {
+    display: block;
+  }
+
   input,
   button,
   select,
@@ -124,61 +204,58 @@
     border: none;
     font: inherit;
   }
-  
+
   button,
-  select { cursor: pointer; }
-  
+  select {
+    cursor: pointer;
+  }
+
   input,
-  textarea { width: 100%; }
-  
-  ion-icon { pointer-events: none; }
-  
+  textarea {
+    width: 100%;
+  }
+
+  ion-icon {
+    pointer-events: none;
+  }
+
   ::selection {
     background: var(--color-primary);
     color: var(--bg-primary);
   }
-  [hidden] { 
-    display: none !important;
-}
-  
+
   html {
     font-family: var(--ff-roboto);
     scroll-behavior: smooth;
   }
-  
-  body {
-    background: var(--bg-primary);
-    transition: var(--transition-1);
-  }
-  
-  body.active { overflow: hidden; }
-  
 
-/* RE USED CODE */
-  
-  .container { padding-inline: 10px; }
-  
-  .h1 {
-    font-size: var(--fs-1);
-    line-height: 1.2;
-    font-weight: 400;
+  body.active {
+    overflow: hidden;
   }
-  
+
+  .container {
+    padding-inline: 10px;
+  }
+
   .h2,
   .h3 {
     color: var(--color-primary);
     font-family: var(--ff-poppins);
     line-height: 1.2;
   }
-  
-  
-  .h3 { font-size: var(--fs-3); }
-  
-  
-  .image { width: 100%;}
 
-  main { overflow-x: hidden; }
-  
+  .h3 {
+    font-size: var(--fs-3);
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
   .btn {
     max-width: max-content;
     color: var(--color-primary);
@@ -190,28 +267,32 @@
     border-radius: var(--radius-4);
     transition: var(--transition-1);
   }
-  
-  .btn-primary { 
+
+  .btn-primary {
     border-color: var(--color-primary);
   }
-  
+
   .btn-primary:is(:hover, :focus) {
     background: var(--color-primary);
     color: var(--bg-primary);
   }
-  .border-line{
+
+  .border-line {
     border-bottom: 2px solid red;
     width: auto;
     margin: 20px;
   }
+
   .btn-secondary {
     background: var(--raw-seinna);
     border-color: var(--raw-seinna);
     color: var(--black);
   }
-  
-  .btn-secondary:is(:hover, :focus) { --raw-seinna: hsl(24, 74%, 64%); }
-  
+
+  .btn-secondary:is(:hover, :focus) {
+    --raw-seinna: hsl(24, 74%, 64%);
+  }
+
   .section-subtitle {
     position: relative;
     color: var(--color-secondary);
@@ -219,7 +300,7 @@
     padding-bottom: 5px;
     margin-bottom: 20px;
   }
-  
+
   .section-subtitle::after {
     content: "";
     position: absolute;
@@ -229,69 +310,79 @@
     height: 2px;
     background: var(--color-secondary);
   }
-  
+
   .section-title {
     max-width: 350px;
     margin-bottom: 30px;
   }
-  
+
   .section-text {
     color: var(--color-secondary);
     line-height: 1.8;
     margin-bottom: 30px;
   }
-  /* Responsive for larger than 550px screen */
-@media (min-width: 550px) {
 
-    /* REUSED STYLE */
+  @media (min-width: 550px) {
     .container {
       max-width: 550px;
       margin-inline: auto;
     }
-  
-    .section-title { max-width: 380px; }
+
+    .section-title {
+      max-width: 380px;
+    }
   }
+
   @media (min-width: 768px) {
-     /* REUSED STYLE */
-     .container { max-width: 720px; }
-     .section-title { max-width: 430px; }
+    .container {
+      max-width: 720px;
+    }
+
+    .section-title {
+      max-width: 430px;
+    }
   }
+
   @media (min-width: 992px) {
-  
-    /* CUSTOM PROPERTY */
     :root {
       --fs-2: 3rem;
       --section-padding: 100px;
     }
-     /* REUSED STYLE */
-     .container { max-width: 980px; }
-  
-     .section-content {
-       position: relative;
-       padding-left: 40px;
-     }
-   
-     .section-subtitle {
-       position: absolute;
-       top: 0;
-       left: 0;
-       transform: rotate(0.75turn) translateX(-100%);
-       transform-origin: left top;
-       margin-bottom: 0;
-     }
-   
-     .section-subtitle::after {
-       top: 8px;
-       left: auto;
-       right: calc(100% + 20px);
-     }
-}
- /* Responsive for larger than 1200px screen */
- @media (min-width: 1200px) {
-  
-    /* REUSED STYLE */
-    .container { max-width: 1150px; }
-    .section-title { max-width: 460px; }
- }
 
+    .container {
+      max-width: 980px;
+    }
+
+    .section-content {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .section-subtitle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(0.75turn) translateX(-100%);
+      transform-origin: left top;
+      margin-bottom: 0;
+    }
+
+    .section-subtitle::after {
+      top: 8px;
+      left: auto;
+      right: calc(100% + 20px);
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1150px;
+    }
+
+    .section-title {
+      max-width: 460px;
+    }
+  }
 </style>
+
+

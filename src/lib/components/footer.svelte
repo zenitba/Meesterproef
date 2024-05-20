@@ -2,16 +2,21 @@
   import { onMount } from 'svelte';
   let showButton = false;
 
+  // Functie om naar boven te scrollen
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Bij het laden van de component
   onMount(() => {
+    // Functie om de knop te tonen op basis van de scrollpositie
     const handleScroll = () => {
-      showButton = window.scrollY > 100; // Adjust the scroll height as needed
+      showButton = window.scrollY > 100; // Hoogte aanpassen indien nodig
     };
 
+    // Event listener voor scrollen
     window.addEventListener('scroll', handleScroll);
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -19,14 +24,14 @@
 </script>
 
 <footer class="footer">
-    <div class="container">
-        <p class="h1 logo">
-            <a href="#">Araya Electrotechniek <span>.</span></a>
-        </p>
-        <p class="copyright">
-          © 2024 <a href="#">Araya Electrotechniek</a>. Alle rechten voorbehouden.
-        </p>
-    </div>
+  <div class="container">
+    <p class="logo-name">
+      <a href="#">Araya Electrotechniek <span>.</span></a>
+    </p>
+    <p class="copyright">
+      © 2024 <a href="#">Araya Electrotechniek</a>. Alle rechten voorbehouden.
+    </p>
+  </div>
 </footer>
 
 <a href="#top" class="go-top {showButton ? 'active' : ''}" data-go-top title="Go to Top" on:click={scrollToTop}>
@@ -36,8 +41,9 @@
     <path d="M7 17l5 -5l5 5" />
   </svg>
 </a>
-<style> 
-/* FOOTER */
+
+<style>
+  /* FOOTER */
   .footer {
     background: var(--bg-secondary);
     padding-block: 20px;
@@ -45,38 +51,41 @@
     box-shadow: var(--shadow-1);
   }
 
-  .footer .logo a{
-/* margin-bottom: 15px; */
-font-family: "Saira Stencil One", sans-serif;
-color: var(--color-primary);
- }
- .logo span {
+  .footer .logo-name a {
+    font-family: "Saira Stencil One", sans-serif;
+    color: var(--color-primary);
+    font-size: var(--fs-1);
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  .logo-name span {
     display: inline-block;
     color: red;
-    /* margin-left: px; */
- }
-  
+  }
+
   .copyright {
     color: var(--color-secondary);
     line-height: 1.6;
   }
-  
+
   .copyright a {
     display: inline-block;
     color: var(--raw-seinna);
   }
+
   @media (min-width: 992px) {
-   /* FOOTER */
-   .footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer .logo {
+      margin-bottom: 0;
+    }
   }
-  .footer .logo { margin-bottom: 0; }
-}
-  
-/* GO TO TOP BUTTON */
-  
+
+  /* GO TO TOP BUTTON */
   .go-top {
     position: fixed;
     bottom: 25px;
@@ -94,8 +103,9 @@ color: var(--color-primary);
     transform: translateY(10px);
     transition: var(--transition-1);
     z-index: 2;
+    background: var(--color-primary);
   }
-  
+
   .go-top.active {
     opacity: 1;
     pointer-events: all;
