@@ -35,7 +35,7 @@
 </footer>
 
 <a href="#top" class="go-top {showButton ? 'active' : ''}" data-go-top title="Go to Top" on:click={scrollToTop}>
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-up" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="#E40F37" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevrons-up" width="36" height="36" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-primary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
     <path d="M7 11l5 -5l5 5" />
     <path d="M7 17l5 -5l5 5" />
@@ -61,7 +61,7 @@
 
   .logo-name span {
     display: inline-block;
-    color: red;
+    color:red ;
   }
 
   .copyright {
@@ -103,7 +103,7 @@
     transform: translateY(10px);
     transition: var(--transition-1);
     z-index: 2;
-    background: var(--color-primary);
+    /* background: var(--color-primary); */
   }
 
   .go-top.active {

@@ -30,8 +30,15 @@
             <h2 class="h3 section-title">{form.formTitle}</h2>
             <p class="section-text">{form.formDescription}</p>
         {/each}
-    </div>
-
+        <div class="contact-list-item">
+            <div class="wrapper">
+              <h3 class="h4 contact-item-title">Kvk</h3>
+              <p class="contact-info">86037420</p>
+              <h3 class="h4 contact-item-title">Email:</h3>
+              <a href="mailto:Araya-electrotechniek@gmail.com" class="contact-info">Araya-electrotechniek@gmail.com</a>
+            </div>
+        </div>
+    </div>  
     <form method="POST" action="/form" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
         <div class="form-wrapper">
             <label for="name" class="form-label">Naam</label>
@@ -113,11 +120,12 @@
     .contact-list-item {
         display: flex;
         align-items: flex-start;
-        gap: 39px;
-        margin-bottom: 20px;
+        margin: 10px 0;
     }
 
     .contact-item-title {
+        /* margin: 20px 0; */
+        margin-top: 20px;
         margin-bottom: 10px;
         color: var(--color-primary);
     }

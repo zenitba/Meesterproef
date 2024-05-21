@@ -1,5 +1,6 @@
 <script>
   export let data;
+
 </script>
 
 <section class="hero" id="home">
@@ -20,7 +21,7 @@
 <style>
   /* HERO */
   .hero {
-    min-height: 64vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
