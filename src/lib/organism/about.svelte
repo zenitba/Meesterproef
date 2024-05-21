@@ -31,6 +31,8 @@
     max-width: 400px;
     margin-inline: auto;
     margin-bottom: 80px;
+    aspect-ratio: 3/2;
+    object-fit: cover;
   }
 
   @media (min-width: 768px) {

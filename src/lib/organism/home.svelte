@@ -1,12 +1,12 @@
 <script>
   export let data;
-
 </script>
 
 <section class="hero" id="home">
   {#each data.homes as home}
     <figure class="hero-banner">
-      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
+      <!-- Gebruik van fetchpriority en loading attributen -->
+      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="eager" width="400" height="400">
     </figure>
     <div class="hero-content">
       <h2 class="h2 hero-title">{home.homeTitle}</h2>
@@ -17,9 +17,8 @@
   {/each}
 </section>
 
-
 <style>
-  /* HERO */
+  /* HERO sectie styling */
   .hero {
     min-height: 70vh;
     display: flex;
@@ -59,8 +58,7 @@
     padding: 45px;
   }
 
-  /* HERO RESPONSIVE */
-  /* Responsive for larger than 992px screen */
+  /* HERO sectie responsieve styling */
   @media (min-width: 992px) {
     .hero {
       position: relative;
@@ -120,4 +118,4 @@
       right: -80px;
     }
   }
-  </style>
+</style>

@@ -53,7 +53,7 @@
 <header class:active={headerActive} class="header" data-header>
   <div class="container">
       <div class="logo">
-          <img src={themeActive ? 'logo-z.svg' : 'logo-wit.svg'} alt="Araya Electrotechniek Logo" loading="lazy" width="50" height="50">
+          <img src={themeActive ? 'logo-z.svg' : 'logo-wit.svg'} alt="Araya Electrotechniek Logo" loading="lazy" width="50" height="50" fetchpriority="high">
       </div>
       <div class="navbar-actions">
         <button class="theme-btn" class:light={themeActive} on:click={toggleTheme} aria-label={themeActive ? 'Verander naar dark modus' : 'Verander naar licht modus'}>

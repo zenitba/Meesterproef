@@ -26,10 +26,10 @@
 <footer class="footer">
   <div class="container">
     <p class="logo-name">
-      <a href="#">Araya Electrotechniek <span>.</span></a>
+      <a href="#home">Araya Electrotechniek <span>.</span></a>
     </p>
     <p class="copyright">
-      © 2024 <a href="#">Araya Electrotechniek</a>. Alle rechten voorbehouden.
+      © 2024 <a href="mailto:Araya-electrotechniek@gmail.com">Araya Electrotechniek</a>. Alle rechten voorbehouden.
     </p>
   </div>
 </footer>
