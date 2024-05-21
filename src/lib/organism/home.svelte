@@ -55,7 +55,7 @@
     height: auto;
     display: block;
     margin: 0 auto;
-    padding: 20px;
+    padding: 45px;
   }
 
   /* HERO RESPONSIVE */
