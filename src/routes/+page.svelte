@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte';
   import Navigation from '$lib/organism/navigation.svelte';
   import Home from '$lib/organism/home.svelte';
   import About from '$lib/organism/about.svelte';
@@ -7,23 +8,19 @@
   import Form from './form/+page.svelte';
   
   export let data;
+
+  onMount(() => {
+    console.log(data);
+  });
 </script>
 
 <Navigation />
 <main>
   <article class="container">
-    <section data-aos="fade-in">
-      <Home {data} />
-    </section>
-    <section data-aos="fade-in">
-      <About {data} />
-    </section>
-    <section data-aos="fade-in">
-      <Service {data} />
-    </section>
-    <section data-aos="fade-in">
-      <Form {data} />
-    </section>
+    <Home {data} />
+    <About {data} />
+    <Service {data} />
+    <Form {data} />
   </article>
 </main>
 <Footer />
