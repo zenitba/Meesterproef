@@ -1,11 +1,11 @@
-# Araya Electrotechniek💡
+# Araya elektrotechniek💡
 
 <img width="704" alt="Schermafbeelding 2024-05-19 om 00 40 50" src="https://github.com/zenitba/Meesterproef/assets/112856019/18030bb4-489d-42b4-b61d-282b2d3c589a">
 
-[Bezoek de website💡](https://araya-electrotechniek.vercel.app/)
+[Bezoek de website💡](https://araya-elektrotechniek.vercel.app/)
 
 ## Ontwikkeling
-Welkom bij de README voor **Araya Electrotechniek**! Dit project betreft de ontwikkeling van een website voor een zelfstandig ondernemer (zzp'er) in de elektrotechniek, met als doel om zijn diensten beter vindbaar te maken voor bedrijven en potentiële klanten.
+Welkom bij de README voor **Araya elektrotechniek**! Dit project betreft de ontwikkeling van een website voor een zelfstandig ondernemer (zzp'er) in de elektrotechniek, met als doel om zijn diensten beter vindbaar te maken voor bedrijven en potentiële klanten.
 
 ## Beschrijving
 Araya Elektrotechniek, gevestigd in het hart van Volendam, Noord-Holland, is een toonaangevende leverancier van betrouwbare en hoogwaardige elektrotechnische oplossingen. Met jarenlange ervaring als toegewijde elektricien staat Araya klaar voor zowel complexe projecten als eenvoudige reparaties. De veelzijdige dienstverlening bedient zowel particuliere als zakelijke klanten. Als u zoekt naar een betrouwbare elektrotechnische specialist, is Araya uw waardevolle partner. Toegewijd aan vakmanschap en klanttevredenheid, biedt Araya een professionele service waarop u kunt vertrouwen.
@@ -32,4 +32,4 @@ Volg de onderstaande stappen om de website lokaal te installeren en te runnen:
 ## Licentie
 Dit project is gelicentieerd onder de MIT-licentie. Zie het LICENSE-bestand voor meer informatie.
 
-Bedankt voor je interesse in **Araya Electrotechniek**! We hopen dat deze website zowel Araya als zijn klanten ten goede zal komen.
+Bedankt voor je interesse in **Araya elektrotechniek**! We hopen dat deze website zowel Araya als zijn klanten ten goede zal komen.

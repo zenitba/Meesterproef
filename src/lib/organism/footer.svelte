@@ -26,7 +26,7 @@
 <footer class="footer">
   <div class="container">
     <p class="logo-name">
-      <a href="#home">Araya Electrotechniek <span>.</span></a>
+      <a href="#home">Araya Elektrotechniek <span>.</span></a>
     </p>
     <p class="copyright">
       © 2024 <a href="mailto:info@araya-electrotechniek.nl">Araya Electrotechniek</a>. Alle rechten voorbehouden.
