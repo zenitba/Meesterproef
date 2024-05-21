@@ -50,7 +50,7 @@
         <div class="form-wrapper">
             <label for="name" class="form-label">Naam</label>
             <div class="input-wrapper">
-                <input type="text" name="name" id="name" required placeholder="e.g John Doe" class="input-field">
+                <input type="text" name="name" id="name" required placeholder="Uw naam of bedrijf naam" class="input-field">
                 <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
@@ -62,7 +62,7 @@
         <div class="form-wrapper">
             <label for="email" class="form-label">Email</label>
             <div class="input-wrapper">
-                <input type="email" name="email" id="email" required placeholder="e.g johndoe@mail.com" class="input-field">
+                <input type="email" name="email" id="email" required placeholder="Uw emailadress" class="input-field">
                 <svg xmlns="http://www.w3.org/2000/svg" class="form-svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="var(--color-secondary)" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" />
