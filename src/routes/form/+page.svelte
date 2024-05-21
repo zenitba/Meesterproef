@@ -37,7 +37,7 @@
               <h3 class="h4 contact-item-title">BTW</h3>
               <p class="contact-info">12345678</p>
               <h3 class="h4 contact-item-title">Email:</h3>
-              <a href="mailto:Araya-electrotechniek@gmail.com" class="contact-info">Araya-electrotechniek@gmail.com</a>
+              <a href="mailto:info@araya-electrotechniek.nl" class="contact-info">info@araya-electrotechniek.nl</a>
             </div>
         </div>
         <noscript>

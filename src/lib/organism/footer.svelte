@@ -29,7 +29,7 @@
       <a href="#home">Araya Electrotechniek <span>.</span></a>
     </p>
     <p class="copyright">
-      © 2024 <a href="mailto:Araya-electrotechniek@gmail.com">Araya Electrotechniek</a>. Alle rechten voorbehouden.
+      © 2024 <a href="mailto:info@araya-electrotechniek.nl">Araya Electrotechniek</a>. Alle rechten voorbehouden.
     </p>
   </div>
 </footer>
