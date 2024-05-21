@@ -35,7 +35,7 @@
               <h3 class="h4 contact-item-title">Kvk</h3>
               <p class="contact-info">86037420</p>
               <h3 class="h4 contact-item-title">BTW</h3>
-              <p class="contact-info">12345678</p>
+              <p class="contact-info">NL004190664B25</p>
               <h3 class="h4 contact-item-title">Email:</h3>
               <a href="mailto:info@araya-electrotechniek.nl" class="contact-info">info@araya-electrotechniek.nl</a>
             </div>
