@@ -2,7 +2,7 @@
 
 <img width="704" alt="Schermafbeelding 2024-05-19 om 00 40 50" src="https://github.com/zenitba/Meesterproef/assets/112856019/18030bb4-489d-42b4-b61d-282b2d3c589a">
 
-[Bezoek de website💡]()
+[Bezoek de website💡](https://araya-electrotechniek.vercel.app/)
 
 ## Ontwikkeling
 Welkom bij de README voor **Araya Electrotechniek**! Dit project betreft de ontwikkeling van een website voor een zelfstandig ondernemer (zzp'er) in de elektrotechniek, met als doel om zijn diensten beter vindbaar te maken voor bedrijven en potentiële klanten.
