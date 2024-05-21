@@ -6,7 +6,7 @@
 <section class="hero" id="home">
   {#each data.homes as home}
     <figure class="hero-banner">
-      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="eager" width="400" height="400">
+      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
     </figure>
     <div class="hero-content">
       <h2 class="h2 hero-title">{home.homeTitle}</h2>
