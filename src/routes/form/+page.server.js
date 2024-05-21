@@ -1,5 +1,3 @@
-// src/routes/form/+page.server.js
-
 import { fail } from '@sveltejs/kit';
 import fetch from 'node-fetch';
 import 'dotenv/config';
@@ -51,3 +49,4 @@ export const actions = {
     }
   }
 };
+

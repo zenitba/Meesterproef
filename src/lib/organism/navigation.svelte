@@ -147,11 +147,27 @@
     width: auto;
   }
 
+  .logo span {
+    display: inline-block;
+    color: var(--raw-seinna);
+    margin-left: 2px;
+  }
+
   .navbar-actions {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-left: auto;
+  }
+
+  .navbar-actions select {
+    color: var(--color-primary);
+    width: 45px;
+  }
+
+  .navbar-actions option {
+    background: var(--bg-primary);
+    color: var (--color-primary);
   }
 
   .theme-btn {
@@ -191,6 +207,10 @@
     z-index: 2;
   }
 
+  .nav-toggle-btn.active {
+    transform: rotate(317deg);
+  }
+
   .nav-toggle-btn span {
     width: 26px;
     height: 2px;
@@ -213,6 +233,17 @@
     margin-left: auto;
   }
 
+  .nav-toggle-btn.active .one {
+    transform: rotate(90deg) translateX(6px);
+  }
+
+  .nav-toggle-btn.active .two {
+    transform: rotate(90deg) translateX(-6px);
+  }
+
+  .nav-toggle-btn.active .three {
+    transform: rotate(90deg) translateX(-6px);
+  }
 
   /* Hidden by default */
   .navbar {
@@ -257,22 +288,6 @@
     margin-block: 20px;
     padding-inline: 50px;
     overflow: hidden;
-    position: relative;
-  }
-
-  .navbar-list > li::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: red;
-    transition: width 0.3s ease-in-out;
-  }
-
-  .navbar-list > li:hover::after {
-    width: 100%;
   }
 
   .navbar-link {

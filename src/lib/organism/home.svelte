@@ -1,31 +1,26 @@
 <script>
-  export let data
+  export let data;
 </script>
 
 <section class="hero" id="home">
-  <!-- Banner afbeelding -->
   {#each data.homes as home}
-  <figure class="hero-banner">
-    <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
-  </figure>
-
-  <!-- Inhoud van de hero sectie -->
-  <div class="hero-content">
-    <h2 class="h2 hero-title">{home.homeTitle}</h2>
-    <div class="border-line"></div>
-    <a href="#contact" class="btn btn-primary">Neem contact op</a>
-  </div>
-
-  <!-- Scroll down link -->
-  <a href="#about" class="scroll-down">Scroll</a>
+    <figure class="hero-banner">
+      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" loading="lazy" width="400" height="400">
+    </figure>
+    <div class="hero-content">
+      <h2 class="h2 hero-title">{home.homeTitle}</h2>
+      <div class="border-line"></div>
+      <a href="#contact" class="btn btn-primary">Neem contact op</a>
+    </div>
+    <a href="#about" class="scroll-down">Scroll</a>
   {/each}
-
 </section>
+
 
 <style>
   /* HERO */
   .hero {
-    min-height: 84vh;
+    min-height: 64vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
