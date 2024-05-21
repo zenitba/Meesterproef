@@ -133,8 +133,7 @@ input,
 label,
 select,
 button,
-textarea,
-ion-icon {
+textarea {
   display: block;
 }
 
@@ -156,9 +155,8 @@ input,
 textarea {
   width: 100%;
 }
-
-ion-icon {
-  pointer-events: none;
+a:focus-visible, button:focus-visible, li:focus-visible, ul:focus-visible{
+    outline: 2px solid var(--color-primary) ;
 }
 
 ::selection {
@@ -203,6 +201,14 @@ line-height: 1.2;
 main {
   overflow-x: hidden;
 }
+.animated-element {
+  will-change: transform, opacity;
+}
+.sr__hide {
+    visibility: hidden !important;
+    will-change: transform, opacity;
+
+  }
 
 .btn {
   max-width: max-content;

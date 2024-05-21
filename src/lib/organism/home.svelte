@@ -120,4 +120,10 @@
       right: -80px;
     }
   }
+    /* Prefer contrast: more */
+    @media (prefers-contrast: more) {
+    .hero-image {
+      filter: contrast(2);
+    }
+  }
   </style>

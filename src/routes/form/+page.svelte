@@ -34,10 +34,17 @@
             <div class="wrapper">
               <h3 class="h4 contact-item-title">Kvk</h3>
               <p class="contact-info">86037420</p>
+              <h3 class="h4 contact-item-title">BTW</h3>
+              <p class="contact-info">12345678</p>
               <h3 class="h4 contact-item-title">Email:</h3>
               <a href="mailto:Araya-electrotechniek@gmail.com" class="contact-info">Araya-electrotechniek@gmail.com</a>
             </div>
         </div>
+        <noscript>
+            <div class="noscript-warning">
+                <p>Uw bericht wordt verzonden, maar u wordt mogelijk doorgestuurd naar een zwart scherm. U kunt terugkeren naar de vorige pagina nadat het bericht is verzonden.</p>
+            </div>
+        </noscript>
     </div>  
     <form method="POST" action="/form" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
         <div class="form-wrapper">
@@ -84,29 +91,26 @@
                     <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1" />
                 </svg>
             </div>
-            {#if successMessage}
-                <p class="success-message">{successMessage}</p>
-            {/if}
-            {#if errorMessage}
-                <p class="error-message">{errorMessage}</p>
-            {/if}
-            <button type="submit" class="btn btn-primary" disabled={isSubmitting}>
+            <div class="form-action">
                 {#if isSubmitting}
-                    Versturen...
-                {:else}
-                    Verstuur
-                {/if}
-            </button>
-        </form>
-        <noscript>
-            <div class="noscript-warning">
-                <p>Uw bericht wordt verzonden, maar u wordt mogelijk doorgestuurd naar een zwart scherm. U kunt terugkeren naar de vorige pagina nadat het bericht is verzonden.</p>
+                    <span class="loader"></span>
+                    {/if}
+                    {#if successMessage}
+                        <p class="success-message">{successMessage}</p>
+                    {/if}
+                    {#if errorMessage}
+                        <p class="error-message">{errorMessage}</p>
+                    {/if}
+                    <button type="submit" class="btn btn-primary" disabled={isSubmitting}>
+                        {#if isSubmitting}
+                            Versturen...
+                        {:else}
+                            Verstuur
+                        {/if}
+                    </button>
             </div>
-        </noscript>
+    </form>
 </section>
-
-
-
 <style>
     /* CONTACT */
     .contact {
@@ -124,7 +128,6 @@
     }
 
     .contact-item-title {
-        /* margin: 20px 0; */
         margin-top: 20px;
         margin-bottom: 10px;
         color: var(--color-primary);
@@ -142,6 +145,7 @@
         padding: 20px;
         border-radius: var(--radius-12);
         box-shadow: var(--shadow-1);
+        position: relative;
     }
 
     .form-wrapper {
@@ -198,6 +202,70 @@
         margin-top: 20px;
     }
 
+    .form-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .loader {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        border-radius: 50%;
+        color: var(--color-primary);
+        box-shadow: 32px 0, -32px 0, 64px 0;
+    }
+
+    .loader::after {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: green;
+        animation: move 3s linear infinite alternate;
+    }
+
+    @keyframes move {
+        0%,
+        5% {
+            left: -32px;
+            width: 16px;
+        }
+        15%,
+        20% {
+            left: -32px;
+            width: 48px;
+        }
+        30%,
+        35% {
+            left: 0px;
+            width: 16px;
+        }
+        45%,
+        50% {
+            left: 0px;
+            width: 48px;
+        }
+        60%,
+        65% {
+            left: 32px;
+            width: 16px;
+        }
+        75%,
+        80% {
+            left: 32px;
+            width: 48px;
+        }
+        95%,
+        100% {
+            left: 64px;
+            width: 16px;
+        }
+    }
+
     @media (min-width: 768px) {
         .contact-form {
             max-width: 450px;
@@ -224,7 +292,7 @@
     .success-message {
         color: green;
         font-weight: bold;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
     }
 
     .error-message {
@@ -234,8 +302,10 @@
     }
 
     .noscript-warning {
-        background: var(--color-warning-bg);
-        color: var(--color-warning-text);
+        background: white;
+        color: black;
+        font-family: var(--ff-poppins);
+        line-height: 1.2;
         padding: 10px;
         border-radius: var(--radius-12);
         margin-top: 20px;
