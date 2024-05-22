@@ -46,7 +46,7 @@
             </div>
         </noscript>
     </div>  
-    <form method="POST" action="/form" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
+    <form action="/form" method="POST" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
         <div class="form-wrapper">
             <label for="name" class="form-label">Naam</label>
             <div class="input-wrapper">

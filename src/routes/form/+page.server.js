@@ -15,7 +15,7 @@ export const actions = {
     }
 
     const payload = {
-      access_key: process.env.VITE_WEB3FORMS_ACCESS_KEY,
+      access_key: process.env.VITE_WEB3FORMS_ACCESS_KEY, 
       name: name,
       email: email,
       phone: phone,
