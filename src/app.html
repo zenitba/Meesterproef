@@ -4,7 +4,7 @@
   <!-- Meta-instellingen -->
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Araya elektrotechniek - Uw betrouwbare ZZP elektricien voor al uw elektrotechnische werkzaamheden. Neem contact op voor installatie, onderhoud en reparatie.">
   %sveltekit.head%
   <title>Araya Elektrotechniek</title>
@@ -151,10 +151,6 @@ input,
 textarea {
   width: 100%;
 }
-a:focus-visible, button:focus-visible, li:focus-visible, ul:focus-visible{
-    outline: 2px solid var(--color-primary) ;
-}
-
 ::selection {
   background: var(--color-primary);
   color: var(--bg-primary);
@@ -198,10 +194,14 @@ main {
   overflow-x: hidden;
 }
 
-/* noscript .aos-animate {
-  opacity: 1 !important;
-  transform: none !important;
-} */
+.form-svg {
+  position: absolute;
+   top: 10px;
+   left: 10px;
+   width: 20px;
+   height: 20px;
+   transition: var(--transition-1);
+  }
 
 .btn {
   max-width: max-content;
@@ -234,10 +234,6 @@ main {
   background: var(--raw-seinna);
   border-color: var(--raw-seinna);
   color: var(--black);
-}
-
-.btn-secondary:is(:hover, :focus) {
-  --raw-seinna: hsl(24, 74%, 64%);
 }
 
 .section-subtitle {
@@ -330,6 +326,16 @@ main {
     max-width: 460px;
   }
 }
+.home-section, .about-section, .service-section, .form-section {
+    padding: 50px 0;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 </style>
 
 

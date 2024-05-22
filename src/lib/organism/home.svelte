@@ -1,37 +1,32 @@
-<script>
-  export let data;
-
-</script>
-
 <section class="hero" id="home">
-  {#each data.homes as home}
-    <figure class="hero-banner">
-      <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" width="400" height="400">
-     </figure>
-    <div class="hero-content">
-      <h2 class="h2 hero-title">{home.homeTitle}</h2>
-      <div class="border-line"></div>
-      <a href="#contact" class="btn btn-primary">Neem contact op</a>
-    </div>
-    <a href="#about" class="scroll-down">Scroll</a>
-  {/each}
+  <figure class="hero-banner">
+    <img src="/hero.png" alt="" class="hero-image" fetchpriority="high" width="400" height="400">
+  </figure>
+  <div class="hero-content">
+    <h2 class="h2 hero-title">Jouw betrouwbare partner voor elektrische oplossingen!</h2>
+    <div class="border-line"></div>
+    <a href="#contact" class="btn btn-primary">Neem contact op</a>
+  </div>
+  <a href="#about" class="scroll-down">Scroll</a>
 </section>
-
 
 <style>
   /* HERO */
   .hero {
-    min-height: 85vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: var(--section-padding);
+    /* margin-bottom: var(--section-padding); */
+    text-align: center; /* Ensure text is centered */
   }
 
   .hero-banner {
     max-width: 500px;
-    width: 125%;
+    width: 100%; /* Adjusted to 100% for proper centering */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
   }
 
   :is(.hero-social-list, .scroll-down) {
@@ -40,10 +35,10 @@
 
   .hero-content {
     max-width: 450px;
+    text-align: center; /* Center the content */
   }
 
   .hero-title {
-    text-align: center;
     margin-bottom: 30px;
   }
 
@@ -55,8 +50,7 @@
     width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
-    padding: 45px;
+    padding: 20px;
   }
 
   /* HERO RESPONSIVE */
@@ -65,19 +59,19 @@
     .hero {
       position: relative;
       padding-top: 0;
-      height: 100vh;
+      height: 90vh;
     }
 
     .hero-banner {
       max-width: unset;
-      height: 100%;
+      height: auto;
+      width: 85%; /* Adjusted width for responsiveness */
       margin-bottom: 0;
     }
 
     .hero-image {
-      height: 100%;
-      width: 65%;
-      margin-inline: auto;
+      height: auto;
+      width: 100%;
       padding: 20px;
     }
 
@@ -95,7 +89,7 @@
     .scroll-down {
       display: block;
       position: absolute;
-      bottom: 80px;
+      bottom: 25px;
       right: -30px;
       color: var(--color-secondary);
       font-size: 1.125rem;
@@ -120,10 +114,4 @@
       right: -80px;
     }
   }
-    /* Prefer contrast: more */
-    @media (prefers-contrast: more) {
-    .hero-image {
-      filter: contrast(2);
-    }
-  }
-  </style>
+</style>

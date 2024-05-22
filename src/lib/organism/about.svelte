@@ -1,57 +1,59 @@
-<script>
-  export let data
-</script>
 
+<script>
+  import { AboutText } from '$lib';
+
+</script>
 <section class="about" id="about">
   <!-- Afbeelding banner -->
-  {#each data.abouts as about}
-
   <figure class="about-banner">
-    <img src="{about.aboutImage.url}" alt="About Banner" class="image" fetchpriority="high" loading="lazy" width="400" height="400">
+    <img src="/A.png" alt="" class="image" fetchpriority="high" loading="lazy" width="400" height="400">
   </figure>
-
   <!-- Inhoud van de About sectie -->
   <div class="about-content section-content">
     <p class="section-subtitle">Over Araya Elektrotechniek</p>
-    <h2 class="h1 section-title">{about.aboutTitle}</h2>
-    <p class="section-text">
-      {about.aboutDescription}
-    </p>
+    <h2 class="h1 section-title">Elektricien nodig?</h2>
+    <AboutText />
   </div>
-  {/each}
 </section>
 
-<style>
-  /*About sectie */
+<style>/* About section */
   .about {
     padding-block: var(--section-padding);
   }
-
+  
   .about-banner {
-    max-width: 400px;
+    max-width: 100%;
     margin-inline: auto;
-    margin-bottom: 80px;
-    aspect-ratio: 3/2;
-    object-fit: cover;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
   }
-
+  
+  .image {
+    width: 110%;
+    height: auto;
+    object-fit: contain; /* Zorgt ervoor dat de afbeelding zijn oorspronkelijke verhoudingen behoudt */
+    display: block;
+    padding: 20px;
+  }
+  
   @media (min-width: 768px) {
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 30px;
-      padding-block: var(--section-padding);
     }
-
+  
     .about-banner {
       margin-bottom: 0;
     }
   }
-
+  
   @media (min-width: 1200px) {
     .about-banner {
       max-width: 450px;
     }
   }
+  
 </style>

@@ -1,38 +1,54 @@
+import { fail } from '@sveltejs/kit';
+import fetch from 'node-fetch';
+import 'dotenv/config';
 
-import { gql } from 'graphql-request';
-import { hygraph } from '$lib/utils/hygraph.js';
+export const actions = {
+  default: async ({ request }) => {
+    const formData = await request.formData();
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const message = formData.get('message');
 
-export async function load() {  
-  let query = gql`
-    query MyQuery {
-      abouts {
-        aboutDescription
-        aboutTitle
-        aboutImage {
-          url
-        }
-      }
-      forms {
-        formDescription
-        formTitle
-      }
-      homes {
-        homeImage {
-          url
-        }
-        homeTitle
-      }
-      services {
-        serviceTitle
-        serviceDescription
-      }
+    if (!name || !email || !message) {
+      return fail(400, { 
+        error: 'Vul alle vereiste velden in.', 
+        values: { name, email, phone, message } 
+      });
     }
-  `;
 
-  try {
-    const request = await hygraph.request(query);
-    return request;
-  } catch (error) {
-    console.error('GraphQL Error:', error);
+    const payload = {
+      access_key: process.env.VITE_WEB3FORMS_ACCESS_KEY, 
+      name,
+      email,
+      phone,
+      message
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        return {
+          success: true,
+          message: 'Uw bericht is verstuurd✅',
+          values: { name: '', email: '', phone: '', message: '' }
+        };
+      } else {
+        console.error('Response error:', result);
+        return fail(500, { error: 'Er is iets misgegaan. Probeer het opnieuw.', values: { name, email, phone, message } });
+      }
+    } catch (err) {
+      console.error('Verzending mislukt:', err);
+      return fail(500, { error: 'Er is iets misgegaan. Probeer het opnieuw.', values: { name, email, phone, message } });
+    }
   }
-}
+};

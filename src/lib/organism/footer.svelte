@@ -1,22 +1,18 @@
 <script>
   import { onMount } from 'svelte';
   let showButton = false;
-
   // Functie om naar boven te scrollen
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
   // Bij het laden van de component
   onMount(() => {
     // Functie om de knop te tonen op basis van de scrollpositie
     const handleScroll = () => {
       showButton = window.scrollY > 100; // Hoogte aanpassen indien nodig
     };
-
     // Event listener voor scrollen
     window.addEventListener('scroll', handleScroll);
-    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -105,7 +101,6 @@
     z-index: 2;
     /* background: var(--color-primary); */
   }
-
   .go-top.active {
     opacity: 1;
     pointer-events: all;
