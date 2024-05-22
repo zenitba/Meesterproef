@@ -13,7 +13,13 @@
       return () => clearInterval(intervalId);
     });
   </script>
-  
+   
+   <div class="error-page">
+    <img src="/error.png" alt="Logo" class="error-image" />
+    <p class="error-message">Oeps er ging iets mis</p>
+    <div class="border-line"></div>
+    <a href="/" class="btn">Terug naar de homepagina</a>
+  </div>
   <style>
 
     .error-page {
@@ -28,35 +34,41 @@
     }
   
     .error-image {
-      max-width: 40%;
+      max-width: 50%;
       height: auto;
       margin-bottom: -20px;
     }
   
     .error-message {
-      color: var(--color-primary);
-      font-family: var(--ff-poppins);
-      line-height: 1.2; 
-      color: black;
-      font-size: 2rem;
-      margin: 8px 0;
+    color: black;
+    line-height: 2.2;
+    margin-top: 20px;
+    font-family: "Saira Stencil One", sans-serif;
+    font-size: 2.2em;
+    font-weight: 400;
     }
-  
+  .border-line{
+    border-bottom: 2px solid red;
+    width: 20em;
+    margin: 0;
+}
+
     .btn {
       margin-top: 20px;
       padding: 10px 20px;
-      font-size: 1rem; 
-      background-color: #ccc;
+      font-size: 1.5rem; 
+      background-color: black;
+      color: #ccc;
       border: none;
       cursor: pointer;
       text-decoration: none;
-      color: black;
+      font-family: "Saira Stencil One", sans-serif;
       transition: transform 0.2s, background-color 0.2s; 
     }
   
     .btn:hover {
-      background-color: black;
-      color: #ccc;
+      background-color: #ccc;
+      color: #000000;
       transform: scale(1.1); 
     }
   
@@ -89,10 +101,5 @@
       }
     }
   </style>
-  
-  <div class="error-page">
-    <img src="/logo-z.svg" alt="Logo" class="error-image" />
-    <p class="error-message">Oeps er ging iets mis</p>
-    <a href="/" class="btn">Terug naar de homepagina</a>
-  </div>
+ 
   
