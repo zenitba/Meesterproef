@@ -76,7 +76,7 @@
 
     .hero-image {
       height: 100%;
-      width: 85%;
+      width: 65%;
       margin-inline: auto;
       padding: 20px;
     }
