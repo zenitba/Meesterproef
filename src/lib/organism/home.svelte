@@ -7,7 +7,7 @@
   {#each data.homes as home}
     <figure class="hero-banner">
       <img src="{home.homeImage.url}" alt="" class="hero-image" fetchpriority="high" width="400" height="400">
-    </figure>
+     </figure>
     <div class="hero-content">
       <h2 class="h2 hero-title">{home.homeTitle}</h2>
       <div class="border-line"></div>
