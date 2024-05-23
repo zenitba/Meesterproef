@@ -13,11 +13,12 @@
 <style>
   /* HERO */
   .hero {
-    min-height: 75vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 30px;
     /* margin-bottom: var(--section-padding); */
     text-align: center; /* Ensure text is centered */
   }
