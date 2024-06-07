@@ -14,6 +14,7 @@
     <h2 class="h1 section-title">Elektricien nodig?</h2>
     <AboutText />
   </div>
+  <!-- Userway widget -->
   <script type="text/javascript">
     var _userway_config = {
     position: 5,
