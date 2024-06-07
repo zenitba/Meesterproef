@@ -1,3 +1,4 @@
+
 <section class="hero" id="home">
   <figure class="hero-banner">
     <img src="/hero.png" alt="" class="hero-image" fetchpriority="high" width="400" height="400">
@@ -19,15 +20,14 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
-    /* margin-bottom: var(--section-padding); */
-    text-align: center; /* Ensure text is centered */
+    text-align: center; 
   }
 
   .hero-banner {
     max-width: 500px;
-    width: 100%; /* Adjusted to 100% for proper centering */
+    width: 100%; 
     display: flex;
-    justify-content: center; /* Center the image horizontally */
+    justify-content: center; 
   }
 
   :is(.hero-social-list, .scroll-down) {
@@ -36,7 +36,7 @@
 
   .hero-content {
     max-width: 450px;
-    text-align: center; /* Center the content */
+    text-align: center; 
   }
 
   .hero-title {
@@ -66,7 +66,7 @@
     .hero-banner {
       max-width: unset;
       height: auto;
-      width: 85%; /* Adjusted width for responsiveness */
+      width: 85%; 
       margin-bottom: 0;
     }
 

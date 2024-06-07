@@ -1,5 +1,5 @@
 <script>
-  import { ServiceContainer } from '$lib';
+  import { ServiceContainer} from '$lib';
 </script>
 
 <section class="project" id="portfolio">

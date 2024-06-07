@@ -1,69 +1,72 @@
 <script>
     import { enhance } from '$app/forms';
     import { SvgEmail, SvgMessage, SvgPhone, SvgUser, ContactList, ContactText } from '$lib';
+
     let isSubmitting = false;
     let successMessage = '';
     let errorMessage = '';
-
+  
+    export let form;
+  
     function handleEnhance({ formElement }) {
-        const handleSubmit = async ({ result }) => {
-            isSubmitting = false;
-            successMessage = '';
-            errorMessage = '';
-
-            if (result.type === 'failure') {
-                errorMessage = result.data.error;
-            } else if (result.type === 'success') {
-                formElement.reset();
-                successMessage = result.data.message;
-            }
-        };
-        return handleSubmit;
+      const handleSubmit = async ({ result }) => {
+        isSubmitting = false;
+        successMessage = '';
+        errorMessage = '';
+  
+        if (result.type === 'failure') {
+          errorMessage = result.data.error;
+        } else if (result.type === 'success') {
+          formElement.reset();
+          successMessage = result.data.message;
+        }
+      };
+      return handleSubmit;
     }
 </script>
 
 <section class="contact" id="contact">
-    <div class="contact-content section-content">
+    <header class="contact-content section-content">
         <p class="section-subtitle">Contact</p>
         <h2 class="h3 section-title">Begin Vandaag met Uw Elektrische Succes!</h2>
         <ContactText />
         <ContactList />
-    </div>  
+    </header>  
     <form method="POST" use:enhance={handleEnhance} on:submit={() => isSubmitting = true} class="contact-form">
         <fieldset>
-            <div class="form-wrapper">
+            <section class="form-wrapper">
                 <label for="name" class="form-label">Naam</label>
                 <div class="input-wrapper">
                     <input type="text" name="name" id="name" required placeholder="Uw naam of bedrijf naam" class="input-field">
                     <SvgUser />
                 </div>
-            </div>
+            </section>
 
-            <div class="form-wrapper">
+            <section class="form-wrapper">
                 <label for="email" class="form-label">Email</label>
                 <div class="input-wrapper">
                     <input type="email" name="email" id="email" required placeholder="Uw emailadress" class="input-field">
                     <SvgEmail />
                 </div>
-            </div>
+            </section>
 
-            <div class="form-wrapper">
+            <section class="form-wrapper">
                 <label for="phone" class="form-label">Mobiel</label>
                 <div class="input-wrapper">
                     <input type="tel" name="phone" id="phone" required placeholder="Mobiele nummer" class="input-field">
                     <SvgPhone /> 
                 </div>
-            </div>
+            </section>
 
-            <div class="form-wrapper">
+            <section class="form-wrapper">
                 <label for="message" class="form-label">Bericht</label>
                 <div class="input-wrapper">
                     <textarea name="message" id="message" required placeholder="Beschrijf uw elektrische vraag of project hier..." class="input-field"></textarea>
                     <SvgMessage />
                 </div>
-            </div>
+            </section>
 
-            <div class="form-action">
+            <section class="form-action">
                 {#if isSubmitting}
                     <span class="loader"></span>
                 {/if}
@@ -80,7 +83,10 @@
                         Verstuur
                     {/if}
                 </button>
-            </div>
+                <noscript>
+                    Nadat uw op verstuur klikt krijg uw geen succes bericht maar uw bericht is verzonden.
+                </noscript>
+            </section>
         </fieldset>
     </form>
 </section>
@@ -145,7 +151,7 @@
         width: 100%;
         background: var(--color-primary);
         color: var(--bg-primary);
-        margin-top: 20px;
+        margin: 20px;
     }
 
     .form-action {
@@ -218,13 +224,5 @@
 
     fieldset {
         border: none;
-    }
-
-    input:valid {
-        border: 2px solid rgb(182, 255, 113);
-    }
-
-    form:valid button {
-        border: white;
     }
 </style>

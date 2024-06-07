@@ -11,14 +11,14 @@ export const actions = {
     const message = formData.get('message');
 
     if (!name || !email || !message) {
-      return fail(400, { 
-        error: 'Vul alle vereiste velden in.', 
-        values: { name, email, phone, message } 
+      return fail(400, {
+        error: 'Vul alle vereiste velden in.',
+        values: { name, email, phone, message }
       });
     }
 
     const payload = {
-      access_key: process.env.VITE_WEB3FORMS_ACCESS_KEY, 
+      access_key: process.env.VITE_WEB3FORMS_ACCESS_KEY,
       name,
       email,
       phone,
@@ -35,6 +35,7 @@ export const actions = {
       });
 
       const result = await response.json();
+      console.log('Web3Forms API response:', result); // Logging response
 
       if (response.ok) {
         return {
@@ -44,11 +45,18 @@ export const actions = {
         };
       } else {
         console.error('Response error:', result);
-        return fail(500, { error: 'Er is iets misgegaan. Probeer het opnieuw.', values: { name, email, phone, message } });
+        return fail(500, {
+          error: 'Er is iets misgegaan. Probeer het opnieuw.',
+          values: { name, email, phone, message }
+        });
       }
     } catch (err) {
       console.error('Verzending mislukt:', err);
-      return fail(500, { error: 'Er is iets misgegaan. Probeer het opnieuw.', values: { name, email, phone, message } });
+      return fail(500, {
+        error: 'Er is iets misgegaan. Probeer het opnieuw.',
+        values: { name, email, phone, message }
+      });
     }
   }
 };
+

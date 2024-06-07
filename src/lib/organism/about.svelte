@@ -14,6 +14,13 @@
     <h2 class="h1 section-title">Elektricien nodig?</h2>
     <AboutText />
   </div>
+  <script type="text/javascript">
+    var _userway_config = {
+    position: 5,
+    account: 'sbED6Wg0dI'
+    };
+    </script>
+    <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
 </section>
 
 <style>/* About section */
@@ -32,7 +39,7 @@
   .image {
     width: 110%;
     height: auto;
-    object-fit: contain; /* Zorgt ervoor dat de afbeelding zijn oorspronkelijke verhoudingen behoudt */
+    object-fit: contain;
     display: block;
     padding: 20px;
   }
@@ -55,5 +62,4 @@
       max-width: 450px;
     }
   }
-  
 </style>

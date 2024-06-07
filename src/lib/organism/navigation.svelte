@@ -92,9 +92,10 @@
               <li><a href="#about" class="navbar-link" on:click={closeNav}>Organisatie.</a></li>
               <li><a href="#portfolio" class="navbar-link" on:click={closeNav}>Diensten.</a></li>
               <li><a href="#contact" class="navbar-link" on:click={closeNav}>Contact.</a></li>
-          </ul>
+          </ul> 
       </nav>
   </div>
+
 </header>
 <noscript>
   <style>
@@ -352,4 +353,5 @@
       height: 2px;
     }
   }
+
 </style>
