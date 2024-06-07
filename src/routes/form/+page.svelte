@@ -6,7 +6,6 @@
     let successMessage = '';
     let errorMessage = '';
   
-    export let form;
   
     function handleEnhance({ formElement }) {
       const handleSubmit = async ({ result }) => {

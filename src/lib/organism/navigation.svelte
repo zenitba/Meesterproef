@@ -148,11 +148,11 @@
     width: auto;
   }
 
-  .logo span {
+  /* .logo span {
     display: inline-block;
     color: var(--raw-seinna);
     margin-left: 2px;
-  }
+  } */
 
   .navbar-actions {
     display: flex;
@@ -161,7 +161,7 @@
     margin-left: auto;
   }
 
-  .navbar-actions select {
+  /* .navbar-actions select {
     color: var(--color-primary);
     width: 45px;
   }
@@ -169,7 +169,7 @@
   .navbar-actions option {
     background: var(--bg-primary);
     color: var (--color-primary);
-  }
+  } */
 
   .theme-btn {
     padding: 4px;
@@ -208,9 +208,9 @@
     z-index: 2;
   }
 
-  .nav-toggle-btn.active {
+  /* .nav-toggle-btn.active {
     transform: rotate(317deg);
-  }
+  } */
 
   .nav-toggle-btn span {
     width: 26px;
@@ -234,7 +234,7 @@
     margin-left: auto;
   }
 
-  .nav-toggle-btn.active .one {
+  /* .nav-toggle-btn.active .one {
     transform: rotate(90deg) translateX(6px);
   }
 
@@ -244,7 +244,7 @@
 
   .nav-toggle-btn.active .three {
     transform: rotate(90deg) translateX(-6px);
-  }
+  } */
 
   /* Hidden by default */
   .navbar {
