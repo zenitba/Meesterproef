@@ -29,13 +29,26 @@
 </head>
 
 <body data-sveltekit-preload-data="hover" id="top" class="dark_theme">
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="/error.png" alt="Preloader Image" class="preloader-image">
+    <span class="loader"></span>
+  </div>
+
   <div style="display: contents">%sveltekit.body%</div>
+
+  <!-- <script>
+    // JavaScript to hide the preloader when the page is fully loaded
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      preloader.style.display = 'none';
+    });
+  </script> -->
 </body>
 
 </html>
-
 <style>
-@import url(https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed);
+  @import url(https://db.onlinewebfonts.com/c/4befbaa0f5b8259eefaaeebdd113fcbd?family=Spartacus+W00+Bold+Condensed);
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400;700&family=Saira+Stencil+One&display=swap');
 
 :root {
@@ -336,6 +349,52 @@ main {
     margin: 0 auto;
     padding: 0 20px;
   }
+
+  /* Preloader styling */
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  #preloader .preloader-image {
+    width: 80%; /* Make the image responsive */
+    max-width: 400px; /* Limit the maximum size of the image */
+    height: auto;
+  }
+
+  .loader {
+    display: block;
+    position: relative;
+    height: 20px;
+    width: 50%;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  .loader:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: #FF3D00;
+    animation: 6s prog ease-in infinite;
+  }
+  
+  @keyframes prog {
+    to { width: 100%; }
+  }
+
 </style>
-
-
