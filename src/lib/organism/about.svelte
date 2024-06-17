@@ -18,7 +18,8 @@
     <script type="text/javascript">
       var _userway_config = {
       position: 5,
-      type: '2',
+      type: '1',
+      color: '#E41037',
       account: 'oZ29s6naR6'
       };
       </script>
