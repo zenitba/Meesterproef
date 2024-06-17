@@ -15,13 +15,14 @@
     <AboutText />
   </div>
   <!-- Userway widget -->
-  <!-- <script type="text/javascript">
-    var _userway_config = {
-    position: 5,
-    account: 'sbED6Wg0dI'
-    };
-    </script>
-    <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script> -->
+    <script type="text/javascript">
+      var _userway_config = {
+      position: 5,
+      type: '2',
+      account: 'oZ29s6naR6'
+      };
+      </script>
+      <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
 </section>
 
 <style>/* About section */

@@ -28,22 +28,21 @@
   </noscript>
 </head>
 
-<body data-sveltekit-preload-data="hover" id="top" class="dark_theme">
+<body data-sveltekit-preload-data="hover" id="top">
   <!-- Preloader -->
-  <div id="preloader">
+  <!-- <div id="preloader">
     <img src="/error.png" alt="Preloader Image" class="preloader-image">
     <span class="loader"></span>
-  </div>
+  </div> -->
 
   <div style="display: contents">%sveltekit.body%</div>
 
- <script>
-    // JavaScript to hide the preloader when the page is fully loaded
+ <!-- <script>
     window.addEventListener('load', () => {
       const preloader = document.getElementById('preloader');
       preloader.style.display = 'none';
     });
-  </script> 
+  </script>  -->
 </body>
 
 </html>

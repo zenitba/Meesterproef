@@ -50,7 +50,7 @@
   .footer .logo-name a {
     font-family: "Saira Stencil One", sans-serif;
     color: var(--color-primary);
-    font-size: var(--fs-1);
+    font-size: 1.9em;
     line-height: 1.2;
     font-weight: 400;
   }
@@ -84,8 +84,8 @@
   /* GO TO TOP BUTTON */
   .go-top {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 11px;
+    right: 9px;
     width: 45px;
     height: 45px;
     display: grid;
