@@ -14,16 +14,6 @@
     <h2 class="h1 section-title">Elektricien nodig?</h2>
     <AboutText />
   </div>
-  <!-- Userway widget -->
-    <script type="text/javascript">
-      var _userway_config = {
-      position: 5,
-      type: '1',
-      color: '#E41037',
-      account: 'oZ29s6naR6'
-      };
-      </script>
-      <script type="text/javascript" src="https://cdn.userway.org/widget.js"></script>
 </section>
 
 <style>/* About section */
