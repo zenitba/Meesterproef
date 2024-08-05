@@ -5,14 +5,13 @@
     let isSubmitting = false;
     let successMessage = '';
     let errorMessage = '';
-  
-  
+
     function handleEnhance({ formElement }) {
       const handleSubmit = async ({ result }) => {
         isSubmitting = false;
         successMessage = '';
         errorMessage = '';
-  
+
         if (result.type === 'failure') {
           errorMessage = result.data.error;
         } else if (result.type === 'success') {

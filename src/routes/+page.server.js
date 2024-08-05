@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import fetch from 'node-fetch';
+import nodemailer from 'nodemailer';
 import 'dotenv/config';
 
 export const actions = {
@@ -38,6 +39,36 @@ export const actions = {
       console.log('Web3Forms API response:', result); // Logging response
 
       if (response.ok) {
+        // Send a no-reply email using Nodemailer
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: process.env.GMAIL_USER,
+            pass: process.env.GMAIL_PASS
+          }
+        });
+
+        const mailOptions = {
+          from: 'no-reply@example.com',
+          to: email,
+          subject: 'Bedankt voor uw bericht!',
+          text: `Geachte ${name},
+          Hartelijk dank voor uw bericht. 
+          Ik ben momenteel met vaderschapsverlof. 
+          Ik zal proberen zo snel mogelijk op uw bericht te reageren
+          Met vriendelijke groet,
+          Araya elektrotechiek`
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error('Error sending email:', error);
+            console.log('Mail options:', mailOptions);
+          } else {
+            console.log('Email sent:', info.response);
+          }
+        });
+
         return {
           success: true,
           message: 'Uw bericht is verstuurd✅',
@@ -59,4 +90,3 @@ export const actions = {
     }
   }
 };
-

@@ -3,17 +3,12 @@
   import { Navigation, Home, About, Service, Footer, Form } from '$lib';
 
   onMount(async () => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-      return;
-    }
-
     const { gsap } = await import('gsap');
     const { ScrollTrigger } = await import('gsap/ScrollTrigger');
     
     gsap.registerPlugin(ScrollTrigger);
 
+    // Scroll-triggered animations for each section
     gsap.from('.home-section', {
       scrollTrigger: {
         trigger: '.home-section',
@@ -82,3 +77,4 @@
   </article>
 </main>
 <Footer />
+
