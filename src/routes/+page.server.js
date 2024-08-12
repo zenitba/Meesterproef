@@ -53,11 +53,11 @@ export const actions = {
           to: email,
           subject: 'Bedankt voor uw bericht!',
           text: `Geachte ${name},
-          Hartelijk dank voor uw bericht. 
-          Ik ben momenteel met vaderschapsverlof. 
-          Ik zal proberen zo snel mogelijk op uw bericht te reageren
-          Met vriendelijke groet,
-          Araya elektrotechiek`
+Hartelijk dank voor uw bericht. 
+Ik ben momenteel met vaderschapsverlof. 
+Ik zal proberen zo snel mogelijk op uw bericht te reageren
+Met vriendelijke groet,
+Araya elektrotechiek`
         };
 
         transporter.sendMail(mailOptions, (error, info) => {

@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from 'svelte';
     import { enhance } from '$app/forms';
     import { SvgEmail, SvgMessage, SvgPhone, SvgUser, ContactList, ContactText } from '$lib';
 
@@ -21,6 +22,14 @@
       };
       return handleSubmit;
     }
+
+    // Controleer op success query parameter
+    onMount(() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('success')) {
+        successMessage = 'Uw bericht is verstuurd✅';
+      }
+    });
 </script>
 
 <section class="contact" id="contact">
@@ -82,7 +91,7 @@
                     {/if}
                 </button>
                 <noscript>
-                    Nadat uw op verstuur klikt krijg uw geen succes bericht maar uw bericht is verzonden.
+                    <p>Uw bericht wordt verzonden zonder succesbericht.</p>
                 </noscript>
             </section>
         </fieldset>
